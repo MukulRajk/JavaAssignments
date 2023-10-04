@@ -1,0 +1,25 @@
+//concurrency
+class FirstThread extends Thread{
+	
+	for(int i=0;i<100;i++) {
+		System.out.println("Hi...");
+	}
+}
+
+class SecondThread extends Thread{
+	for(int i=0;i<100;i++)
+{
+	System.out.println("Hello....");
+}
+}
+
+public class test {
+
+	public static void main(String[] args) {
+FirstThread ft=new FirstThread();
+SecondThread st=new SecondThread();
+		
+		
+	}
+
+}

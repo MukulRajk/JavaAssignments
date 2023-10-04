@@ -1,0 +1,53 @@
+import java.sql.*;
+import java.util.*;
+
+
+		public class CaseStudy{
+
+			public static void main(String[] args) throws Exception {
+				Scanner sc=new Scanner(System.in);
+				
+				System.out.println("enter AccountNumber,Name,Balance");
+				int AccountNumber=sc.nextInt();
+				String Name=sc.next();
+				double Balance=sc.nextDouble();
+				
+				
+				
+		//driver loading
+		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "rootroot");
+		//name,username,password
+			 
+
+		//Statement smt=conn.createStatement();
+		//PreparedStatement pstmt=conn.prepareStatement("insert into Laptop values(?,?,?)");
+PreparedStatement pstmt=conn.prepareStatement("insert into Bank2(?,?,?)");		
+		
+		pstmt.setInt(1, AccountNumber);
+		pstmt.setString(2, Name);
+		pstmt.setDouble(3, Balance);
+		
+		
+		
+		boolean status=pstmt.execute();
+		if(!status)
+		System.out.println("row inserted successfully");
+		/*while(rset.next())
+		{
+			System.out.println(rset.getInt(1)+" "+rset.getString(2)+" "+rset.getDouble(3));
+			
+
+
+		}
+		*/
+		conn.close();
+			}
+
+		
+
+
+	}
+
+
+
+		

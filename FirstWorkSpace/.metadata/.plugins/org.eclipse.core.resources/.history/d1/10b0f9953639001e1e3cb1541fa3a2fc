@@ -1,0 +1,72 @@
+
+//Account Number, Name and Account Balance 
+class bank{
+	private int AccNo;
+	private String Name;
+	private double Balance;
+
+	
+	public bank(int accNo, String name, double balance) {
+		super();
+		AccNo = accNo;
+		Name = name;
+		Balance = balance;
+	}
+
+
+	public int getAccNo() {
+		return AccNo;
+	}
+
+
+	public void setAccNo(int accNo) {
+		AccNo = accNo;
+	}
+
+
+	public String getName() {
+		return Name;
+	}
+
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+
+	public double getBalance() {
+		return Balance;
+	}
+
+
+	public void setBalance(double balance) {
+		Balance = balance;
+	}
+
+	public void show() {
+		System.out.println("A/c Number :"+AccNo+"\n Account Holder Name : "+Name+"\n Balance :"+Balance);
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+public class CaseStudy {
+
+	public static void main(String[] args) {
+	bank b=new bank(123,"First",35000);
+	
+		
+		
+	}
+
+}

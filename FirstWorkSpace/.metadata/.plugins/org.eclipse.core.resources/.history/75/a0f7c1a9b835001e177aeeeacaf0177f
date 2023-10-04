@@ -1,0 +1,48 @@
+/*
+ 20.Create two different threads t1 and t2.
+   t1 ==> prints next 10 incremented values of user entered number 
+   t2 ==> prints multiplication table of the user entered number
+ */
+
+import java.util.Scanner;
+
+class  firstT extends Thread {
+		private int number;
+		
+		public int firstT(int number) {
+			this.number=number; }
+			
+			public void run() {
+		for(int i=0;i<10;i++)
+			{
+			System.out.println(number+=10);
+			}
+	}  }
+	
+	
+	
+	class secondT extends Thread{
+		private int number;
+		
+		public int secondT(int number) {
+		this.number=number; }
+		
+		public void run() {
+		for(int i=0;i<10;i++)
+		{
+		System.out.println(number*10);
+		} }
+		
+	}
+	
+
+	
+public class Tester {
+public static void main(String args[]) {
+	//Scanner sc=new Scanner(System.in);
+	firstT t1=new firstT();
+	secondT t2=new secondT();
+	t1.start();
+t2.start();	
+}
+}

@@ -1,0 +1,28 @@
+
+//Account Number, Name and Account Balance 
+class bank{
+	private int AccNo;
+	private String Name;
+	private double Balance;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+public class CaseStudy {
+
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

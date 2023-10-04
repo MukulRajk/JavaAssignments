@@ -1,0 +1,67 @@
+package practice_15_8_23;
+
+import java.sql.*;
+
+public class mytable {
+
+	public static void main(String[] args)  throws SQLException {
+		
+		//public void createTable()  {
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "rootroot");
+		{  String createString =
+		      "create table SUPPLIERS " + "(SUP_ID integer NOT NULL, " +
+		      "SUP_NAME varchar(40) NOT NULL, " + "STREET varchar(40) NOT NULL, " +
+		      "CITY varchar(20) NOT NULL, " + "STATE char(2) NOT NULL, " +
+		      "ZIP char(5), " + "PRIMARY KEY (SUP_ID))";
+		    
+		    try (Statement stmt = con.createStatement()) {
+		      stmt.executeUpdate(createString);
+		    } catch (SQLException e) {
+		      JDBCTutorialUtilities.printSQLException(e);
+		    }
+		  }
+		
+		//
+		//public void populateTable() throws SQLException {
+		{
+			try (Statement stmt = con.createStatement()) {
+		      stmt.executeUpdate("insert into SUPPLIERS " +
+		                         "values(49, 'Superior Coffee', '1 Party Place', " +
+		                         "'Mendocino', 'CA', '95460')");
+		      stmt.executeUpdate("insert into SUPPLIERS " +
+		                         "values(101, 'Acme, Inc.', '99 Market Street', " +
+		                         "'Groundsville', 'CA', '95199')");
+		      stmt.executeUpdate("insert into SUPPLIERS " +
+		                         "values(150, 'The High Ground', '100 Coffee Lane', " +
+		                         "'Meadows', 'CA', '93966')");
+		    } catch (SQLException e) {
+		      JDBCTutorialUtilities.printSQLException(e);
+		    }
+		    
+		}
+		
+		//
+		//public static void viewTable(Connection con) throws SQLException {
+		{  String query = "select COF_NAME, SUP_ID, PRICE, SALES, TOTAL from COFFEES";
+	        try (Statement stmt = con.createStatement()) {
+	          ResultSet rs = stmt.executeQuery(query);
+	          while (rs.next()) {
+	            String coffeeName = rs.getString("COF_NAME");
+	            int supplierID = rs.getInt("SUP_ID");
+	            float price = rs.getFloat("PRICE");
+	            int sales = rs.getInt("SALES");
+	            int total = rs.getInt("TOTAL");
+	            System.out.println(coffeeName + ", " + supplierID + ", " + price +
+	                               ", " + sales + ", " + total);
+	          }
+	        } catch (SQLException e) {
+	          JDBCTutorialUtilities.printSQLException(e);
+	        }
+	      }
+		
+		
+		
+
+	}
+
+}

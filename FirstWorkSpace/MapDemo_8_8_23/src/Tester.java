@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Tester {
+
+	public static void main(String args[]) {
+	//hashmap,linked hashmap,treemap
+		Map <Integer,String> m=new HashMap<>();
+		m.put(100, "Asus");
+		m.put(202, "Dell");
+		m.put(67, "Hp");
+		System.out.println(m);
+		
+		Set<Integer> keys=m.keySet();
+		System.out.println(keys);
+	
+		System.out.println("key: ");
+	for(Integer key:keys) {
+		System.out.println(key);
+		
+	}
+	
+	System.out.println("value: ");
+	for(Integer key:keys) {
+		System.out.println(m.get(key));
+		
+	}
+	
+	
+	System.out.println("\n linkedHashMap:");
+	Map <Integer,String> m1=new LinkedHashMap<>();
+	m1.put(100, "Asus");
+	m1.put(202, "Dell");
+	m1.put(67, "Hp");
+	System.out.println(m1);
+	
+	
+	System.out.println("\n treeMap: ");
+	Map <Integer,String> m2=new TreeMap<>();
+	m2.put(100, "Asus");
+	m2.put(202, "Dell");
+	m2.put(67, "Hp");
+	System.out.println(m2);
+	}
+	
+	
+}

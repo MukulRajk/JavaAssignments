@@ -1,0 +1,32 @@
+import java.sql.*;
+
+
+		public class test{
+
+			public static void main(String[] args) throws Exception {
+		//driver loading
+		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "rootroot");
+		//name,username,password
+			 
+
+		Statement smt=conn.createStatement();
+		boolean status=smt.execute("insert into Laptop values (110,'abc',98760)");
+		if(!status)
+		System.out.println("row inserted successfully");
+		/*while(rset.next())
+		{
+			System.out.println(rset.getInt(1)+" "+rset.getString(2)+" "+rset.getDouble(3));
+			
+
+
+		}
+		*/
+		conn.close();
+			}
+
+		
+
+
+	}
+
+

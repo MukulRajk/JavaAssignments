@@ -1,0 +1,38 @@
+/*
+ abstraction - process of identifying key attributes of an entity and ignoring rest of the attributes
+ 
+ encapsulation - 
+ */
+class Laptop{
+	private lid;
+	private make;
+	private cost;
+	
+	
+	public Laptop{   // default constructor
+		lid=101;
+		make="ASUS";
+		cost=87400;
+	}
+	public Laptop(int lid,String make, double cost) { //parameterized constructor
+	this.lid=lid;   //this -refere to laptop->private->lid
+	this.make=make;
+	this.cost=cost;
+	
+	
+	}
+
+	
+}
+
+
+
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Laptop l3=new Laptop(102,"Asus",89700);
+		System.out.println(l3.getCost);
+	}
+
+}

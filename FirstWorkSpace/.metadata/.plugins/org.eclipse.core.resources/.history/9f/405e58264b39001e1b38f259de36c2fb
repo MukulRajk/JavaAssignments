@@ -1,0 +1,131 @@
+
+//Account Number, Name and Account Balance 
+
+import java.util.Scanner;
+
+class bank{
+	private int AccNo;
+	private String Name;
+	private double Balance;
+
+	
+	public bank(int accNo, String name, double balance) {
+		super();
+		AccNo = accNo;
+		Name = name;
+		Balance = balance;
+	}
+
+
+	public int getAccNo() {
+		return AccNo;
+	}
+
+
+	public void setAccNo(int accNo) {
+		AccNo = accNo;
+	}
+
+
+	public String getName() {
+		return Name;
+	}
+
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+
+	public double getBalance() {
+		return Balance;
+	}
+
+
+	public void setBalance(double balance) {
+		Balance = balance;
+	}
+
+	public  void show() {
+		System.out.println("A/c Number :"+AccNo+"\n Account Holder Name : "+Name+"\n Balance :"+Balance);
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+public class CaseStudy {
+
+	public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+int choice,i=0;
+bank[] b=new bank[1000];
+
+System.out.println("Welcome to Bank");
+
+	System.out.println("Enter your Choice : ");
+	System.out.println("1.Add a new Customer :");
+	System.out.println("2.Search Customer Details(Name/Account Number) : ");
+	System.out.println("3.Update your Details(Account Number) : ");
+	System.out.println("4.Balance Enquiry : ");
+	System.out.println("5.Close(Delete) the customer account : ");
+	System.out.println("6.Exit ");
+int c,f;
+String d,e = " ";
+choice=sc.nextInt();
+switch(choice) {
+case 1:
+	System.out.println("Enter your Account Number,Name & Money to be deposited : \n");
+
+	b[i++]=new bank(sc.nextInt(),sc.next(),sc.nextDouble()); 
+	
+
+case 2:
+	
+	System.out.println("Enter your Name(1) or Account Number(0) : ");
+c=sc.nextByte();
+{ 
+	if(c==1) {
+		System.out.println("enter your name : ");
+		e=sc.next();
+		
+	}
+	else if	(c==0) {
+		System.out.println("enter your Account number : ");
+		f=sc.nextInt();
+	}
+	
+	
+}
+			for( i=0;i<b.length;i++) {
+				if(e==b[i].getName()) {
+					System.out.println(b[i].show());
+				}
+				
+				else if(f==b[i].getAccNo()) {
+					System.out.println(b[i].show());
+				}
+				
+			}
+case 3:
+case 4:
+case 5:
+case 6:
+	
+}
+		//bank b=new bank(123,"First",35000);
+		//b.show();
+		
+		
+	}
+
+}
